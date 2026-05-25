@@ -1,0 +1,692 @@
+Aqui está o código HTML/CSS completo, reformulado com uma paleta de cores roxa (tons de lavanda, lilás e ameixa suave), mantendo todo o conteúdo e a estrutura responsiva sobre educação no campo.
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Educação do Campo | Saberes da Terra, Futuro Sustentável</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FBF9FF;
+      color: #4A3B5C;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      /* Paleta roxa pastel suave e acolhedora */
+      --purple-mist: #E9E2F5;
+      --purple-soft: #D9CCF0;
+      --purple-lavender: #CBB8E6;
+      --purple-pale: #F3EEFA;
+      --purple-light-bg: #F8F4FF;
+      --purple-lilac: #D1C0E8;
+      --accent-purple-deep: #B794D4;
+      --accent-purple-muted: #A883C4;
+      --text-dark-purple: #4A3F5E;
+      --text-soft-purple: #6B5B7E;
+      --white-soft: #FFFFFF;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Navbar */
+    .header {
+      background-color: rgba(253, 250, 255, 0.96);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #E9E0F0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      font-size: 1.45rem;
+      color: #9A85B5;
+    }
+
+    .logo i {
+      font-size: 2rem;
+      color: #B494D4;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #6C5A7E;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #B38FD9;
+      border-bottom: 2px solid #DECCEE;
+      padding-bottom: 4px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(115deg, #F9F5FF 0%, #FDF9FF 100%);
+      padding: 4rem 0 5rem;
+      border-bottom: 1px solid #EEE6F8;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #A180C1;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #7C6A91;
+      margin-bottom: 2rem;
+      max-width: 90%;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #CFBEE6;
+      color: #4A3B5C;
+      padding: 0.85rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .btn:hover {
+      background-color: #BDAAE0;
+      color: #2F2A3E;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 18px -10px rgba(156, 126, 196, 0.4);
+    }
+
+    .hero-img {
+      flex: 1;
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-img:hover img {
+      transform: scale(1.02);
+    }
+
+    /* seções comuns */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #A385C2;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      color: #8E7AA6;
+      font-size: 1.1rem;
+    }
+
+    /* Sobre grid */
+    .about-grid {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1.2;
+    }
+
+    .about-text h3 {
+      font-size: 1.7rem;
+      margin-bottom: 1rem;
+      color: #B095CF;
+    }
+
+    .about-text p {
+      margin-bottom: 1.2rem;
+      color: #6E5C84;
+    }
+
+    .about-feature {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .about-feature li {
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .about-feature i {
+      color: #C7B0E2;
+      font-size: 1.3rem;
+      width: 1.8rem;
+    }
+
+    .about-img {
+      flex: 1;
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Cards metodologias */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #F1EBFA;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 35px -20px rgba(0, 0, 0, 0.1);
+      border-color: #E2D5F0;
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      background: #F5EFFC;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      margin: 0 auto 1.2rem;
+      color: #BEAEE0;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #A48AC8;
+    }
+
+    .card p {
+      color: #85769B;
+    }
+
+    /* Desafios e soluções */
+    .challenges {
+      background-color: #FCF9FF;
+      border-radius: 4rem 4rem 4rem 4rem;
+    }
+
+    .dual-list {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .challenge-box, .solution-box {
+      flex: 1;
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .challenge-box h3, .solution-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .challenge-box ul, .solution-box ul {
+      list-style: none;
+    }
+
+    .challenge-box li, .solution-box li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+    }
+
+    .challenge-box li i {
+      color: #D6BDE2;
+      font-size: 1.1rem;
+    }
+
+    .solution-box li i {
+      color: #CBB2E3;
+    }
+
+    /* Galeria */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 1rem;
+      text-align: center;
+      font-weight: 500;
+      background: white;
+      color: #7F6C98;
+    }
+
+    /* depoimento curto */
+    .testimonial {
+      background: linear-gradient(120deg, #FCF9FF, #FFFFFF);
+      border-radius: 3rem;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 1rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .testimonial i {
+      font-size: 2.8rem;
+      color: #DBC6F0;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      font-style: italic;
+      color: #7A6991;
+    }
+
+    /* footer */
+    .footer {
+      background-color: #F4EFFC;
+      color: #7F6B9A;
+      padding: 3rem 0 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #EADFF5;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+      color: #B49AD1;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #8C78A5;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .social-links a {
+      margin-right: 1rem;
+      font-size: 1.4rem;
+      transition: 0.2s;
+      color: #C9B5E3;
+    }
+
+    .social-links a:hover {
+      color: #B390DA;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #E3D9EF;
+      font-size: 0.85rem;
+    }
+
+    /* responsivo */
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1.2rem;
+      }
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+      .hero-content p {
+        max-width: 100%;
+      }
+      .dual-list {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      section {
+        padding: 3rem 0;
+      }
+      .hero {
+        padding: 2.5rem 0;
+      }
+      .btn {
+        padding: 0.7rem 1.5rem;
+      }
+    }
+
+    /* badge & detalhes */
+    .badge {
+      background: #F2EBFB;
+      color: #8A73A5;
+      border-radius: 50px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    a {
+      transition: all 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo">
+        <i class="fas fa-seedling"></i>
+        <span>EducaCampo</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#metodologias">Metodologias</a></li>
+        <li><a href="#desafios">Desafios</a></li>
+        <li><a href="#galeria">Raízes</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero section -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">🌾 Saberes do campo, pontes para o futuro</span>
+          <h1>Educação que floresce na terra e na comunidade</h1>
+          <p>Valorizando a identidade camponesa, a agroecologia e uma pedagogia enraizada na vida real. Escolas do campo formando cidadãos críticos, felizes e transformadores.</p>
+          <a href="#sobre" class="btn">Descobrir mais <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-img">
+          <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&auto=format" alt="Crianças e educadores em atividade na escola rural" loading="eager">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre a educação do campo -->
+    <section id="sobre">
+      <div class="container">
+        <h2 class="section-title">O que é Educação do Campo?</h2>
+        <p class="section-sub">Uma concepção educacional que respeita os saberes, ciclos da natureza e os modos de vida do povo camponês</p>
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>Raízes no território, asas para o mundo</h3>
+            <p>A educação no campo vai além de escolas rurais: é um movimento que luta por políticas públicas específicas, currículos contextualizados e valorização dos agricultores familiares, quilombolas, indígenas e ribeirinhos. No Brasil, as Diretrizes Operacionais para a Educação do Campo garantem práticas pedagógicas que dialogam com a realidade local.</p>
+            <ul class="about-feature">
+              <li><i class="fas fa-hand-holding-heart"></i> <strong>Pedagogia da Alternância:</strong> integração entre tempo escola e tempo comunidade.</li>
+              <li><i class="fas fa-globe-americas"></i> <strong>Sustentabilidade:</strong> educação ambiental e agroecologia aplicadas ao cotidiano.</li>
+              <li><i class="fas fa-chalkboard-user"></i> <strong>Protagonismo juvenil:</strong> jovens do campo como agentes de transformação.</li>
+            </ul>
+          </div>
+          <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format" alt="Alunos em escola rural interagindo com a horta">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodologias práticas -->
+    <section id="metodologias" style="background-color: #FDFAFE;">
+      <div class="container">
+        <h2 class="section-title">Metodologias que transformam</h2>
+        <p class="section-sub">Práticas educativas que conectam conhecimento científico à sabedoria da terra</p>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+            <h3>Pedagogia da Alternância</h3>
+            <p>Família e escola alternam responsabilidades: o estudante vive experiências no campo e reflete em sala, fortalecendo a aprendizagem significativa.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-seedling"></i></div>
+            <h3>Currículo Contextualizado</h3>
+            <p>Matemática do manejo, ciências do solo, história dos territórios — conteúdos que partem da realidade camponesa e dialogam com o saber universal.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-people-arrows"></i></div>
+            <h3>Educação Comunitária</h3>
+            <p>Envolvimento das famílias, mutirões, horta escolar e gestão democrática. A escola como centro pulsante da comunidade rural.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Desafios e soluções -->
+    <section id="desafios" class="challenges">
+      <div class="container">
+        <h2 class="section-title">Desafios & Caminhos possíveis</h2>
+        <p class="section-sub">Mesmo diante das dificuldades, a educação do campo avança com coragem e inovação.</p>
+        <div class="dual-list">
+          <div class="challenge-box">
+            <h3><i class="fas fa-exclamation-triangle"></i> Desafios reais</h3>
+            <ul>
+              <li><i class="fas fa-bus"></i> Transporte escolar precário e longas distâncias</li>
+              <li><i class="fas fa-wifi"></i> Acesso limitado à internet e tecnologias</li>
+              <li><i class="fas fa-chalkboard"></i> Falta de formação específica para professores</li>
+              <li><i class="fas fa-book"></i> Material didático urbano-centrado sem identidade camponesa</li>
+            </ul>
+          </div>
+          <div class="solution-box">
+            <h3><i class="fas fa-lightbulb"></i> Soluções em construção</h3>
+            <ul>
+              <li><i class="fas fa-tractor"></i> Políticas de transporte comunitário e rotas integradas</li>
+              <li><i class="fas fa-satellite-dish"></i> Escolas conectadas com internet comunitária e bibliotecas offline</li>
+              <li><i class="fas fa-user-graduate"></i> Cursos de especialização em Educação do Campo (PROCAMPO)</li>
+              <li><i class="fas fa-leaf"></i> Produção de livros paradidáticos regionais e kits pedagógicos agroecológicos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria fotográfica -->
+    <section id="galeria">
+      <div class="container">
+        <h2 class="section-title">Vidas & saberes do campo</h2>
+        <p class="section-sub">Imagens que contam histórias de aprendizado, cultura e resistência nas escolas rurais</p>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&auto=format" alt="Crianças estudando ao ar livre em escola do campo">
+            <div class="gallery-caption">📖 Aula ao ar livre - integração com a natureza</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&auto=format" alt="Horta escolar comunitária">
+            <div class="gallery-caption">🌱 Horta pedagógica: alimentação saudável e ciência</div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&auto=format" alt="Professora e alunos em sala de aula rural">
+            <div class="gallery-caption">🎨 Sala de aula com identidade camponesa e afeto</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimento simbólico -->
+    <div class="container">
+      <div class="testimonial">
+        <i class="fas fa-quote-left"></i>
+        <p>"A escola do campo não ensina a fugir da terra, ensina a cuidar dela, a transformá-la com justiça e conhecimento. É onde a esperança semeia futuro."</p>
+        <strong>— Maria de Lourdes, educadora popular (Escola Família Agrícola)</strong>
+      </div>
+    </div>
+
+    <!-- Contato e engajamento -->
+    <section id="contato" style="padding-top: 2rem;">
+      <div class="container">
+        <div style="background: #F9F4FF; border-radius: 2rem; padding: 2.5rem; text-align: center;">
+          <h2 style="color: #AE92D0;">Participe dessa corrente do saber</h2>
+          <p style="margin: 1rem auto; max-width: 600px; color: #846E9F;">Quer apoiar ou conhecer iniciativas de educação no campo? Compartilhe experiências, materiais ou seja um voluntário digital.</p>
+          <a href="#" class="btn" style="background-color: #E3D6F5; color: #4F3D68;">Quero colaborar <i class="fas fa-envelope"></i></a>
+          <p style="margin-top: 1.3rem; font-size: 0.85rem;">contato@educampo.org | (61) 9 9999-8888</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="rodape">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4><i class="fas fa-seedling"></i> EducaCampo</h4>
+          <p>Defendemos uma educação libertadora, que valorize as culturas camponesas e construa territórios sustentáveis.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <p><a href="#inicio">Início</a><br><a href="#sobre">Conceitos</a><br><a href="#metodologias">Práticas</a><br><a href="#desafios">Desafios</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Redes & Parcerias</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+          <p style="margin-top: 1rem;">✉︎ contato@educampo.org</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Educação do Campo — Respeito à biodiversidade cultural e ambiental. 🌾</p>
+        <p style="font-size: 0.7rem;">Imagens ilustrativas — projeto para difusão da escola no campo e pedagogia da alternância.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+```
